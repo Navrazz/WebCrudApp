@@ -1,0 +1,49 @@
+﻿@model PizzaStore.Models.Pizza
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Szczegóły</h2></center>
+
+<div class="container">
+    <hr />
+    @Html.HiddenFor(model => model.Id)
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                <h3>Nazwa</h3>
+            </dt>
+
+            <dd>
+                <h3> @Html.DisplayFor(model => model.Name)</h3>
+            </dd>
+
+            <dt>
+                <h3>Cena</h3>
+            </dt>
+
+            <dd>
+                <h3> @Html.DisplayFor(model => model.Price) zł</h3>
+            </dd>
+
+            <dt>
+                <h3> Wegetariańska</h3>
+            </dt>
+
+            <dd>
+                <h3> @Html.DisplayFor(model => model.IsVegetarian)</h3>
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-body">
+            <img src="@Html.DisplayFor(model => model.Image)" width=100%>
+        </div>
+    </div>
+</div>
+    
+    <a class="btn btn-success" href="/Home">Wróć</a>
+    <a class="btn btn-info" href="/Home/OrderPizza/@Html.DisplayFor(model => model.Id)">Zamów</a>
+
+
+

@@ -1,0 +1,38 @@
+﻿@model List<PizzaStore.Models.Pizza>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Pizza Store</h1>
+        Kliknij miniaturę aby zobaczyć szczegóły
+    </center>
+</div>
+
+<div class="content">
+    <center><a class="btn btn-success" href="/Home/Add">Dodaj</a></center>
+    <hr />
+<div class="container">
+    <div class="row">
+        @foreach (PizzaStore.Models.Pizza pizza in @Model)
+        {
+            <div class="col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel panel-heading">
+                        <center>@pizza.Name , @pizza.Id</center>
+                    </div>
+                    <div class="panel panel-body">
+                        <a href="/Home/Details/@pizza.Id"><img src="@pizza.Image" height="210"></a>
+                        <hr />
+                        <a class="btn btn-info" href="/Home/Edit/@pizza.Id">Edytuj</a>
+                        <a class="btn btn-danger" href="/Home/Delete/@pizza.Id">Usuń</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+    
+</div>

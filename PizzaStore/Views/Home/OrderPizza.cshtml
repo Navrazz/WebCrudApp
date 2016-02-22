@@ -1,0 +1,40 @@
+﻿@model PizzaStore.Models.Order
+@{
+    ViewBag.Title = "OrderPizza";
+}
+
+<h2>Zamów pizze</h2>
+
+@using (Html.BeginForm("_OrderPizza", "Home", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-2">Imię klienta</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">Ilość</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">ID Pizzy</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.PizzaId, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Zamow" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}

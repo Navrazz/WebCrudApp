@@ -1,0 +1,47 @@
+﻿@model PizzaStore.Models.Pizza
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Dodaj pizze</h2>
+
+@using (Html.BeginForm("_Add", "Home", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-2">Nazwa</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">Cena</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">Wegetariańska</div>
+            <div class="col-md-5">
+                @Html.CheckBoxFor(model => model.IsVegetarian, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">Wklej URL zdjęcia</div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.Image, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+

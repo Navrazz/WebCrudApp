@@ -1,0 +1,27 @@
+﻿@model List<PizzaStore.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Zamówienia</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Numer:</th>
+        <th>Imię klienta:</th>
+        <th>Pizza:</th>
+        <th>Ilość:</th>
+    </tr>
+    @foreach (PizzaStore.Models.Order order in @Model)
+
+    {
+        <tr>
+            <td>@order.Id</td>
+            <td>@order.CustomerName</td>
+            <td>@order.PizzaId</td>
+            <td>@order.Quantity</td>
+        </tr>
+    }
+</table>
+<a class="btn btn-success" href="/Home">Wróć</a>
